@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-image: url(images/venice-background.jpg);
+  background-blend-mode: multiply;
+  background-size: cover;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: white;
+}
+
+/******
+Typography
+************/
+
+h1 {
+  margin: 0;
+  text-align: center;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h3 {
+  margin: 0;
+  font-weight: 900;
+}
+
+ul {
+  padding: 0;
+}
+
+/**********
+Layout
+**********/
+
+.accent {
+  color: #ff4e20;
+}
+
+.container {
+  margin: 3em auto;
+  min-width: 800px;
+  max-width: 1100px;
+  display: grid;
+  grid-template-rows: 100px 500px 100px;
+  grid-template-columns:
+    80px 1fr 1fr 1fr
+    80px;
+  grid-template-areas:
+    ".  title title title ."
+    "button-prev content content content button-next"
+    ". . indicators . .";
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  grid-area: title;
+}
+
+.btn-prev {
+  grid-area: button-prev;
+}
+
+.btn-next {
+  grid-area: button-next;
+}
+
+.indicators {
+  grid-area: indicators;
+}
+
+.cards-hidden {
+  display: none;
+}
+
+.cards-visible {
+  grid-area: content;
+  display: flex;
+  justify-content: space-around;
+  /* border: 1px solid red; */
+}
+
+.card {
+  width: 270px;
+  background: #fff;
+  color: #000;
+  margin: 10px;
+  padding-bottom: 2em;
+}
+
+.card-title {
+  text-transform: uppercase;
+  margin: 20px;
+}
+
+.card-list {
+  font-size: 0.8rem;
+  margin: 20px;
+}
+
+.card-list-item {
+  list-style: none;
+  margin-top: 1em;
+}
+
+.card-img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+
+.hotel-name {
+  margin-right: 0.7em;
+}
+
+/*******
+Buttons
+******/
+
+.btn-card {
+  border: 1px solid #fff;
+  background: inherit;
+  color: inherit;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  justify-self: center;
+}
+
+.btn-card:hover,
+.btn-card:focus {
+  background-color: #fff;
+  color: #000;
+}
+
+/*******
+Indicators
+****/
+
+.indicators {
+  justify-self: center;
+}
+
+.indicator {
+  border: 1px solid #fff;
+  margin: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.indicator-active {
+  background-color: #ff4e20;
+}
