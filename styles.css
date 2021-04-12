@@ -6,8 +6,8 @@ body {
   margin: 0;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
-  background-image: url(images/venice-background.jpg);
-  background-blend-mode: multiply;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(images/venice-background.jpg);
   background-size: cover;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
@@ -86,7 +86,21 @@ h1 {
   grid-area: content;
   display: flex;
   justify-content: space-around;
-  /* border: 1px solid red; */
+  animation: fadeVisibility 1.5s;
+}
+
+@keyframes fadeVisibility {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.cards {
+  max-height: 420px;
 }
 
 .card {
@@ -109,7 +123,7 @@ h1 {
 
 .card-list-item {
   list-style: none;
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 
 .card-img {
